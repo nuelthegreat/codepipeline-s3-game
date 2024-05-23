@@ -1,43 +1,50 @@
+/* Apply overall style for the body */
 body {
-    font-family: 'Roboto', sans-serif; 
-    background-color: #282c34; 
-    color: #ffffff; 
+    font-family: 'Roboto', sans-serif;
+    background-color: #282c34;
+    color: #ffffff;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
+/* Container for centering and styling the game area */
 .container {
-    width: auto;
+    width: 90%;
+    max-width: 1200px;
     margin: 40px auto;
     padding: 30px;
-    background-color: #3c404d; 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); 
-    border-radius: 15px; 
+    background-color: #3c404d;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
 }
 
+/* Styling the header */
 h1 {
-    color: white; 
+    color: #ffcc00; /* Bright color for the title */
 }
 
+/* Instructions styling */
 .instructions {
     font-size: 20px;
     margin-bottom: 30px;
     color: #adbac7;
 }
 
+/* Game board grid layout */
 #game-board {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 20px;
     justify-content: center;
     padding: 20px;
 }
 
+/* Individual card styling */
 .card {
-    width: 211.8px;
-    height: 166.2px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* Aspect ratio 4:3 */
     background-color: #565c6f;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -46,19 +53,30 @@ h1 {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
 }
 
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarges on hover */
+}
+
+/* Image inside the card */
 .card img {
     width: 100%;
     height: auto;
     visibility: hidden; /* Hide images by default */
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .card.show img {
     visibility: visible; /* Show image when card is flipped */
 }
 
+/* Start game button styling */
 #start-game {
     background-color: #4caf50;
     color: white;
