@@ -1,4 +1,4 @@
-/* Apply overall style for the body */
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #282c34;
@@ -8,10 +8,9 @@ body {
     padding: 0;
 }
 
-/* Container for centering and styling the game area */
+/* Container Styles */
 .container {
-    width: 90%;
-    max-width: 1200px;
+    width: auto;
     margin: 40px auto;
     padding: 30px;
     background-color: #3c404d;
@@ -19,33 +18,33 @@ body {
     border-radius: 15px;
 }
 
-/* Styling the header */
+/* Heading Styles */
 h1 {
-    color: #ffcc00; /* Bright color for the title */
+    color: #ff9800; /* Bright orange */
 }
 
-/* Instructions styling */
+/* Instructions Styles */
 .instructions {
     font-size: 20px;
     margin-bottom: 30px;
     color: #adbac7;
 }
 
-/* Game board grid layout */
+/* Game Board Styles */
 #game-board {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 20px;
     justify-content: center;
     padding: 20px;
 }
 
-/* Individual card styling */
+/* Card Styles */
 .card {
-    width: 100%;
-    height: 0;
-    padding-bottom: 75%; /* Aspect ratio 4:3 */
-    background-color: #565c6f;
+    width: 211.8px;
+    height: 166.2px;
+    background-color: #8e44ad; /* Vibrant purple */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -53,42 +52,39 @@ h1 {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    position: relative;
-    transition: transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
 }
 
 .card:hover {
+    background-color: #9b59b6; /* Lighter purple on hover */
     transform: scale(1.05); /* Slightly enlarges on hover */
 }
 
-/* Image inside the card */
 .card img {
     width: 100%;
     height: auto;
     visibility: hidden; /* Hide images by default */
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
+    transition: visibility 0.3s; /* Smooth transition for visibility */
 }
 
 .card.show img {
     visibility: visible; /* Show image when card is flipped */
 }
 
-/* Start game button styling */
+/* Start Game Button Styles */
 #start-game {
-    background-color: #4caf50;
+    background-color: #e91e63; /* Bright pink */
     color: white;
     padding: 12px 24px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
 }
 
 #start-game:hover {
-    background-color: #43a047; /* Darker on hover */
+    background-color: #c2185b; /* Darker pink on hover */
     transform: scale(1.05); /* Slightly enlarges on hover */
 }
